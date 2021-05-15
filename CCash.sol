@@ -700,7 +700,7 @@ abstract contract Ownable is Context {
     }
 }
 
-// File: contracts/Krill.sol
+// File: contracts/CCASH.sol
 
 
 pragma solidity 0.7.4;
@@ -714,5 +714,4 @@ contract CCASH is ERC20("Coinopolis Cash", "CCASH"), Ownable {
     function burn(address _account, uint256 _amount) public onlyOwner {
       _burn(_account, _amount);
     }
-
 }
