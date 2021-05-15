@@ -1,3 +1,35 @@
+
+// Skip to content
+// Pull requests
+// Issues
+// Marketplace
+// Explore
+// @mattarad
+// polywhalefarm /
+// contracts
+
+// 2
+// 3
+
+//     8
+
+// Code
+// Issues
+// Pull requests
+// Actions
+// Projects
+// Wiki
+// Security
+
+//     Insights
+
+// contracts/MasterChef.sol
+// @polywhalefarm
+// polywhalefarm first commit
+// Latest commit 97ed560 22 days ago
+// History
+// 1 contributor
+// 1315 lines (1146 sloc) 48.1 KB
 // File: @openzeppelin/contracts/math/SafeMath.sol
 
 
@@ -1034,7 +1066,7 @@ contract ERC20 is Context, IERC20 {
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
 }
 
-// File: contracts/CCASH.sol
+// File: contracts/CCash.sol
 
 
 pragma solidity 0.7.4;
@@ -1051,6 +1083,7 @@ contract CCash is ERC20("TrashBag", "TrashBag"), Ownable {
       _burn(_account, _amount);
     }
 
+
 }
 
 // File: contracts/MasterChef.sol
@@ -1063,7 +1096,7 @@ pragma solidity 0.7.4;
 
 
 
-// MasterChef is the master of CCASH. He can make CCASH and he is a fair guy.
+// MasterChef is the master of CCash. He can make CCash and he is a fair guy.
 //
 // Note that it's ownable and the owner wields tremendous power. The ownership
 // will be transferred to a governance smart contract once CCASH is sufficiently
@@ -1079,7 +1112,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         uint256 amount;         // How many LP tokens the user has provided.
         uint256 rewardDebt;     // Reward debt. See explanation below.
         //
-        // We do some fancy math here. Basically, any point in time, the amount of CCASHs
+        // We do some fancy math here. Basically, any point in time, the amount of CCASH
         // entitled to a user but is pending to be distributed is:
         //
         //   pending reward = (user.amount * pool.accCCASHPerShare) - user.rewardDebt
@@ -1094,9 +1127,9 @@ contract MasterChef is Ownable, ReentrancyGuard {
     // Info of each pool.
     struct PoolInfo {
         IERC20 lpToken;           // Address of LP token contract.
-        uint256 allocPoint;       // How many allocation points assigned to this pool. CCASHs to distribute per block.
-        uint256 lastRewardBlock;  // Last block number that CCASHs distribution occurs.
-        uint256 accCCASHPerShare;   // Accumulated CCASHs per share, times 1e12. See below.
+        uint256 allocPoint;       // How many allocation points assigned to this pool. CCASH to distribute per block.
+        uint256 lastRewardBlock;  // Last block number that CCASH distribution occurs.
+        uint256 accCCASHPerShare;   // Accumulated CCASH per share, times 1e12. See below.
         uint16 depositFeeBP;      // Deposit fee in basis points
     }
 
@@ -1134,7 +1167,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         devaddr = msg.sender;
         feeAddress = msg.sender;
         ccashPerBlock = 2000000000000000000;
-        startBlock = ;
+        startBlock = 10;
     }
 
     function poolLength() external view returns (uint256) {
@@ -1181,7 +1214,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         return _to.sub(_from).mul(BONUS_MULTIPLIER);
     }
 
-    // View function to see pending CCASHs on frontend.
+    // View function to see pending CCASH on frontend.
     function pendingCCASH(uint256 _pid, address _user) external view returns (uint256) {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_user];
@@ -1276,7 +1309,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         emit EmergencyWithdraw(msg.sender, _pid, amount);
     }
 
-    // Safe ccash transfer function, just in case if rounding error causes pool to not have enough CCASHs.
+    // Safe ccash transfer function, just in case if rounding error causes pool to not have enough CCASH.
     function safeCCASHTransfer(address _to, uint256 _amount) internal {
         uint256 ccashBal = ccash.balanceOf(address(this));
         bool transferSuccess = false;
