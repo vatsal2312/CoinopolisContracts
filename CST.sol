@@ -700,7 +700,7 @@ abstract contract Ownable is Context {
     }
 }
 
-// File: contracts/Krill.sol
+// File: contracts/CST.sol
 
 
 pragma solidity 0.7.4;
