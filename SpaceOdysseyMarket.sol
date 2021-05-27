@@ -59,11 +59,11 @@ contract SpaceOdysseyMarket is ERC1155Holder {
         uint256 tokenAmount
     );
 
-    constructor(SpaceOdyssey _spaceOdyssey, IERC20 _ccash) {
+    constructor() {
         name = "Coinopolis Space Odyssey Market";
         admin = msg.sender;
-        spaceOdyssey = _spaceOdyssey;
-        ccash = _ccash;
+        spaceOdyssey = SpaceOdyssey(  insert address );
+        ccash = IERC20( inset address );
     }
 
     modifier onlyAdmin {
