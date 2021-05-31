@@ -1,5 +1,6 @@
 pragma solidity 0.8.0;
 
+// for remix
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 
 contract SpaceOdyssey is ERC1155 {
@@ -15,7 +16,6 @@ contract SpaceOdyssey is ERC1155 {
     mapping(uint256 => string) public tokenURI;
 
     // artist of flower and fee requested
-    // mapping(uint256 => mapping(address => uint256)) public artist;
     mapping(uint256 => address payable) public artist;
 
     event Minted(
