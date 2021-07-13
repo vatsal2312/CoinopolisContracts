@@ -1,5 +1,6 @@
 pragma solidity ^0.7.4;
 
+// Must import CST AND add the correct CST address in constructor
 import '../dBankV2/CST.sol';
 
 
