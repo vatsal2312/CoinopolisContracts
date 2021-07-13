@@ -5,7 +5,7 @@ import '../dBankV2/CST.sol';
 
 
 contract Timelock {
-  uint public constant duration = 8 minutes;
+  uint public constant duration = 365 days;
   uint public immutable end;
   address public immutable owner;
   CST public cst;
