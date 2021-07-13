@@ -13,7 +13,7 @@ contract Timelock {
   constructor() {
     end = block.timestamp + duration;
     owner = msg.sender; 
-    cst = CST(0x281bd1e74A8C5A7e47Df102594500a322BD61929);
+    cst = CST();
   }
 
   function withdraw() external {
