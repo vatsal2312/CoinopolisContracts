@@ -1,5 +1,6 @@
 pragma solidity ^0.7.4;
 
+// Must import MasterChef AND add the correct MasterChef address in constructor
 import '../dBankV2/MasterChefv2.sol';
 
 
