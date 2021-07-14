@@ -1,11 +1,10 @@
 pragma solidity ^0.7.4;
 
-// Must import CST AND add the correct CST address in constructor
 import '../dBankV2/CST.sol';
 
 
 contract Timelock {
-  uint public constant duration = 365 days;
+  uint public constant duration = 90 days;
   uint public immutable end;
   address public immutable owner;
   CST public cst;
@@ -13,7 +12,7 @@ contract Timelock {
   constructor() {
     end = block.timestamp + duration;
     owner = msg.sender; 
-    cst = CST();
+    cst = CST(0x04d40bEFB0a3DFbF76c1B1157EB23865Abdb6D0B);
   }
 
   function withdraw() external {
