@@ -1,11 +1,10 @@
 pragma solidity ^0.7.4;
 
-// Must import MasterChef AND add the correct MasterChef address in constructor
 import '../dBankV2/MasterChefv2.sol';
 
 
 contract Timelock {
-  uint public constant duration = 365 days;
+  uint public constant duration = 30 days;
   uint public immutable end;
   address public immutable owner;
   MasterChef public masterChef;
@@ -13,7 +12,7 @@ contract Timelock {
   constructor() {
     end = block.timestamp + duration;
     owner = msg.sender; 
-    masterChef = MasterChef();
+    masterChef = MasterChef(0x7518167AACa8E7Ede78015D19Ed02169E62796F9);
   }
 
   function withdraw() external {
