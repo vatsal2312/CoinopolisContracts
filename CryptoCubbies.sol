@@ -34,7 +34,7 @@ contract CryptoCubbies is ERC721, Ownable {
         publicMintingActive = false;
         maticMintFee = 10000000000000000000;
         ccashMintFee = 1000000000000000000000;
-        ccash = IERC20(0xEDB8e1A3697d92C2E416dcae12394026440aB3DC);
+        ccash = IERC20(0x712b76191f2b48F0F1f4Cc0B6793d59FE22f6B2a);
     }
     
     // modifier to check if caller is admin
